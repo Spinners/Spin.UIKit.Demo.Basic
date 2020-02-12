@@ -10,6 +10,7 @@
 		74BECFAC23F39475002FA0AF /* ReactiveSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BECFAB23F39475002FA0AF /* ReactiveSwiftViewController.swift */; };
 		74BECFAE23F39499002FA0AF /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BECFAD23F39499002FA0AF /* RxSwiftViewController.swift */; };
 		74BECFB023F394B0002FA0AF /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BECFAF23F394B0002FA0AF /* CombineViewController.swift */; };
+		74BECFB423F39607002FA0AF /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BECFB323F39607002FA0AF /* State.swift */; };
 		74DEBD0A23F38D09004A69DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DEBD0923F38D09004A69DD /* AppDelegate.swift */; };
 		74DEBD0C23F38D09004A69DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DEBD0B23F38D09004A69DD /* SceneDelegate.swift */; };
 		74DEBD1123F38D09004A69DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74DEBD0F23F38D09004A69DD /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		74BECFAB23F39475002FA0AF /* ReactiveSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftViewController.swift; sourceTree = "<group>"; };
 		74BECFAD23F39499002FA0AF /* RxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
 		74BECFAF23F394B0002FA0AF /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
+		74BECFB323F39607002FA0AF /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		74DEBD0623F38D09004A69DD /* Spin.UIKit.Demo.Basic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spin.UIKit.Demo.Basic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DEBD0923F38D09004A69DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74DEBD0B23F38D09004A69DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74BECFB123F39509002FA0AF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				74BECFAB23F39475002FA0AF /* ReactiveSwiftViewController.swift */,
+				74BECFAD23F39499002FA0AF /* RxSwiftViewController.swift */,
+				74BECFAF23F394B0002FA0AF /* CombineViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74BECFB223F39516002FA0AF /* Spin */ = {
+			isa = PBXGroup;
+			children = (
+				74BECFB323F39607002FA0AF /* State.swift */,
+			);
+			path = Spin;
+			sourceTree = "<group>";
+		};
 		74DEBCFD23F38D09004A69DD = {
 			isa = PBXGroup;
 			children = (
@@ -68,15 +88,14 @@
 		74DEBD0823F38D09004A69DD /* Spin.UIKit.Demo.Basic */ = {
 			isa = PBXGroup;
 			children = (
+				74BECFB223F39516002FA0AF /* Spin */,
+				74BECFB123F39509002FA0AF /* ViewControllers */,
 				74DEBD0923F38D09004A69DD /* AppDelegate.swift */,
 				74DEBD0B23F38D09004A69DD /* SceneDelegate.swift */,
 				74DEBD0F23F38D09004A69DD /* Main.storyboard */,
 				74DEBD1223F38D0D004A69DD /* Assets.xcassets */,
 				74DEBD1423F38D0D004A69DD /* LaunchScreen.storyboard */,
 				74DEBD1723F38D0D004A69DD /* Info.plist */,
-				74BECFAB23F39475002FA0AF /* ReactiveSwiftViewController.swift */,
-				74BECFAD23F39499002FA0AF /* RxSwiftViewController.swift */,
-				74BECFAF23F394B0002FA0AF /* CombineViewController.swift */,
 			);
 			path = Spin.UIKit.Demo.Basic;
 			sourceTree = "<group>";
@@ -166,6 +185,7 @@
 				74DEBD0A23F38D09004A69DD /* AppDelegate.swift in Sources */,
 				74BECFB023F394B0002FA0AF /* CombineViewController.swift in Sources */,
 				74DEBD0C23F38D09004A69DD /* SceneDelegate.swift in Sources */,
+				74BECFB423F39607002FA0AF /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
