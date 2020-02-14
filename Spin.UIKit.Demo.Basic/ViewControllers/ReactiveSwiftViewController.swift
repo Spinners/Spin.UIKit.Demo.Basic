@@ -6,9 +6,9 @@
 //  Copyright © 2020 Spinners. All rights reserved.
 //
 
-import UIKit
-import Spin_Swift
 import Spin_ReactiveSwift
+import Spin_Swift
+import UIKit
 
 class ReactiveSwiftViewController: UIViewController {
 

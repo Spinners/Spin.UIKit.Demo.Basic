@@ -14,10 +14,61 @@
                     <view key="view" contentMode="scaleToFill" id="7ln-nh-msl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnA-vq-kN5">
+                                <rect key="frame" x="176" y="393.5" width="62.5" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-xk-0Mh">
+                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tf-08-l9X">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="lmv-id-29o"/>
+                                            <action selector="resetButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="wOc-Ie-2Mw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-zK-Pkc">
+                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="toggleButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="FeD-Ha-9ot"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-UC-3SR">
+                                <rect key="frame" x="20" y="44" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BZI-xk-0Mh" firstAttribute="centerX" secondItem="BTJ-Sz-3Q3" secondAttribute="centerX" id="4eT-B3-ub8"/>
+                            <constraint firstItem="uqe-UC-3SR" firstAttribute="top" secondItem="BTJ-Sz-3Q3" secondAttribute="top" id="5UN-Jv-7oI"/>
+                            <constraint firstItem="uqe-UC-3SR" firstAttribute="leading" secondItem="BTJ-Sz-3Q3" secondAttribute="leading" constant="20" id="6AV-iG-KHl"/>
+                            <constraint firstItem="BTJ-Sz-3Q3" firstAttribute="bottom" secondItem="BZI-xk-0Mh" secondAttribute="bottom" constant="76" id="Mex-b4-mu6"/>
+                            <constraint firstItem="EnA-vq-kN5" firstAttribute="centerX" secondItem="BTJ-Sz-3Q3" secondAttribute="centerX" id="cpL-gu-5dH"/>
+                            <constraint firstItem="EnA-vq-kN5" firstAttribute="centerY" secondItem="BTJ-Sz-3Q3" secondAttribute="centerY" id="kYU-44-T8f"/>
+                            <constraint firstItem="BTJ-Sz-3Q3" firstAttribute="trailing" secondItem="uqe-UC-3SR" secondAttribute="trailing" constant="20" id="nm8-c0-6I0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BTJ-Sz-3Q3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="RxSwift" id="2df-wo-3mE"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="EnA-vq-kN5" id="GHk-Gl-jYt"/>
+                        <outlet property="debugStateLabel" destination="uqe-UC-3SR" id="iUU-2u-LWJ"/>
+                        <outlet property="resetButton" destination="3tf-08-l9X" id="K6Y-Yr-IXv"/>
+                        <outlet property="toggleButton" destination="aUH-zK-Pkc" id="q8v-TE-oft"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nee-EP-VLV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +126,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-V3-6jS">
-                                <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                <rect key="frame" x="20" y="44" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
