@@ -8,6 +8,6 @@
 
 enum State {
     case fixed(value: Int)
-    case decreasing(value: Int, max: Int, paused: Bool)
-    case increasing(value: Int, max: Int, paused: Bool)
+    case decreasing(value: Int, paused: Bool)
+    case increasing(value: Int, paused: Bool)
 }

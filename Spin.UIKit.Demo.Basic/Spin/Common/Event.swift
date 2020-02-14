@@ -9,7 +9,7 @@
 enum Event {
     case start
     case pause
-    case reset
+    case reset(value: Int)
     case increase
     case decrease
 }
