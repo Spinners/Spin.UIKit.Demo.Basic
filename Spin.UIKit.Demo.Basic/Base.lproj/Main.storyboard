@@ -46,14 +46,64 @@
                     <view key="view" contentMode="scaleToFill" id="TUA-KZ-9y4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiR-wg-bx5">
+                                <rect key="frame" x="176" y="393.5" width="62.5" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="GH3-Fd-Lft">
+                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OM-ek-veh">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="8Zy-E0-3dg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txM-j1-QRg">
+                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="toggleButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="sLc-12-HLR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-V3-6jS">
+                                <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vNa-V3-6jS" firstAttribute="leading" secondItem="8ET-zY-Gi8" secondAttribute="leading" constant="20" id="3KX-lF-IIx"/>
+                            <constraint firstItem="qiR-wg-bx5" firstAttribute="centerX" secondItem="8ET-zY-Gi8" secondAttribute="centerX" id="GOS-c1-AOB"/>
+                            <constraint firstItem="GH3-Fd-Lft" firstAttribute="centerX" secondItem="8ET-zY-Gi8" secondAttribute="centerX" id="Gdm-np-Jt2"/>
+                            <constraint firstItem="vNa-V3-6jS" firstAttribute="top" secondItem="8ET-zY-Gi8" secondAttribute="top" id="bCL-Ai-pJK"/>
+                            <constraint firstItem="qiR-wg-bx5" firstAttribute="centerY" secondItem="8ET-zY-Gi8" secondAttribute="centerY" id="eZO-gK-SA8"/>
+                            <constraint firstItem="8ET-zY-Gi8" firstAttribute="trailing" secondItem="vNa-V3-6jS" secondAttribute="trailing" constant="20" id="plu-79-MAZ"/>
+                            <constraint firstItem="8ET-zY-Gi8" firstAttribute="bottom" secondItem="GH3-Fd-Lft" secondAttribute="bottom" constant="76" id="xFq-En-1hG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8ET-zY-Gi8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="ReactiveSwift" id="pnj-GW-7A7"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="qiR-wg-bx5" id="kDX-nx-9px"/>
+                        <outlet property="debugStateLabel" destination="vNa-V3-6jS" id="c0r-KE-wgA"/>
+                        <outlet property="resetButton" destination="9OM-ek-veh" id="tyQ-N0-dHU"/>
+                        <outlet property="toggleButton" destination="txM-j1-QRg" id="ef8-sB-0su"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg0-hG-wXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="-290"/>
+            <point key="canvasLocation" x="308.69565217391306" y="-290.625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="v8f-AE-r9q">

@@ -9,21 +9,25 @@
 import ReactiveSwift
 
 func decreaseEffect(state: State) -> SignalProducer<Event, Never> {
-    guard case let State.decreasing(value, _) = state else { return .empty }
+    guard case let State.decreasing(value, pause) = state, pause == false else { return .empty }
+
+    let scheduler = QueueScheduler(qos: .userInteractive, name: "decreaseEffect")
 
     if value > 0 {
-        return SignalProducer<Event, Never>(value: .decrease)
+        return SignalProducer<Event, Never>(value: .decrease).delay(1, on: scheduler)
     }
 
-    return SignalProducer<Event, Never>(value: .increase)
+    return SignalProducer<Event, Never>(value: .increase).delay(1, on: scheduler)
 }
 
 func increaseEffect(state: State) -> SignalProducer<Event, Never> {
-    guard case let State.increasing(value, _) = state else { return .empty }
+    guard case let State.increasing(value, pause) = state, pause == false else { return .empty }
+
+    let scheduler = QueueScheduler(qos: .userInteractive, name: "increaseEffect")
 
     if value < 10 {
-        return SignalProducer<Event, Never>(value: .increase)
+        return SignalProducer<Event, Never>(value: .increase).delay(1, on: scheduler)
     }
 
-    return SignalProducer<Event, Never>(value: .decrease)
+    return SignalProducer<Event, Never>(value: .decrease).delay(1, on: scheduler)
 }

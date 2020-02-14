@@ -7,24 +7,65 @@
 //
 
 import UIKit
+import Spin_Swift
+import Spin_ReactiveSwift
 
 class ReactiveSwiftViewController: UIViewController {
 
+    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var debugStateLabel: UILabel!
+
+    private var uiSpin: ReactiveUISpin<State, Event>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       let countdownSpin = Spinner
+            .from(initialState: State.fixed(value: 10))
+            .add(feedback: ReactiveFeedback(effect: decreaseEffect))
+            .add(feedback: ReactiveFeedback(effect: increaseEffect))
+            .reduce(with: ReactiveReducer(reducer: reducer))
+
+        self.uiSpin = ReactiveUISpin(spin: countdownSpin)
+        self.uiSpin.render(on: self, using: { $0.render(state:) })
+        self.uiSpin.spin()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func toggleButton(_ sender: UIButton) {
+        self.uiSpin.emit(.toggle)
     }
-    */
 
+    @IBAction func resetButton(_ sender: UIButton) {
+        self.uiSpin.emit(.reset(value: 10))
+    }
+}
+
+private extension ReactiveSwiftViewController {
+    func render(state: State) {
+
+        self.debugStateLabel.text = "state = \(state)"
+
+        switch state {
+        case .fixed(let value):
+            self.counterLabel.text = "\(value)"
+            self.counterLabel.textColor = .green
+            self.toggleButton.isEnabled = true
+            self.resetButton.isEnabled = false
+            self.toggleButton.setTitle("Start", for: .normal)
+        case .decreasing(let value, let paused):
+            self.counterLabel.text = "\(value)"
+            self.counterLabel.textColor = .red
+            self.toggleButton.isEnabled = true
+            self.toggleButton.setTitle(paused ? "Start": "Pause", for: .normal)
+            self.resetButton.isEnabled = true
+        case .increasing(let value, let paused):
+            self.counterLabel.text = "\(value)"
+            self.counterLabel.textColor = .blue
+            self.toggleButton.isEnabled = true
+            self.toggleButton.setTitle(paused ? "Start": "Pause", for: .normal)
+            self.resetButton.isEnabled = true
+        }
+    }
 }
