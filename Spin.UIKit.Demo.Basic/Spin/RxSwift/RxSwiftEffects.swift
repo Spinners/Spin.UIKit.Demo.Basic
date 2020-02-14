@@ -5,6 +5,7 @@
 //  Created by Thibault Wittemberg on 2020-02-13.
 //  Copyright © 2020 Spinners. All rights reserved.
 //
+
 import RxSwift
 
 func decreaseEffect(state: State) -> Observable<Event> {

@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BTJ-Sz-3Q3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RxSwift" id="2df-wo-3mE"/>
+                    <tabBarItem key="tabBarItem" title="RxSwift" image="gobackward.10" catalog="system" id="2df-wo-3mE"/>
                     <connections>
                         <outlet property="counterLabel" destination="EnA-vq-kN5" id="GHk-Gl-jYt"/>
                         <outlet property="debugStateLabel" destination="uqe-UC-3SR" id="iUU-2u-LWJ"/>
@@ -81,14 +81,67 @@
                     <view key="view" contentMode="scaleToFill" id="eZR-iI-7sd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr6-Tp-Q6R">
+                                <rect key="frame" x="176" y="393.5" width="62.5" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="dw6-45-que">
+                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-i4-fLv">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="resetButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="4tO-bh-Pdi"/>
+                                            <action selector="resetButton:" destination="u4P-an-2Iq" eventType="touchUpInside" id="cmq-Cc-6gm"/>
+                                            <action selector="resetButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="hco-Fm-npo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-ou-imC">
+                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="toggleButton:" destination="u4P-an-2Iq" eventType="touchUpInside" id="fVD-rH-RRn"/>
+                                            <action selector="toggleButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="ga3-UV-MW9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz3-uh-70y">
+                                <rect key="frame" x="20" y="44" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Dz3-uh-70y" firstAttribute="top" secondItem="OrT-SV-BCD" secondAttribute="top" id="NEc-oU-SzT"/>
+                            <constraint firstItem="Mr6-Tp-Q6R" firstAttribute="centerX" secondItem="OrT-SV-BCD" secondAttribute="centerX" id="S7w-b3-6m8"/>
+                            <constraint firstItem="OrT-SV-BCD" firstAttribute="bottom" secondItem="dw6-45-que" secondAttribute="bottom" constant="76" id="TYr-g4-pLX"/>
+                            <constraint firstItem="OrT-SV-BCD" firstAttribute="trailing" secondItem="Dz3-uh-70y" secondAttribute="trailing" constant="20" id="cJ0-SR-f96"/>
+                            <constraint firstItem="Mr6-Tp-Q6R" firstAttribute="centerY" secondItem="OrT-SV-BCD" secondAttribute="centerY" id="daN-tN-hh7"/>
+                            <constraint firstItem="Dz3-uh-70y" firstAttribute="leading" secondItem="OrT-SV-BCD" secondAttribute="leading" constant="20" id="t1x-7B-l7i"/>
+                            <constraint firstItem="dw6-45-que" firstAttribute="centerX" secondItem="OrT-SV-BCD" secondAttribute="centerX" id="t5a-wD-yO2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OrT-SV-BCD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Combine" id="XgL-3k-C5N"/>
+                    <tabBarItem key="tabBarItem" title="Combine" image="gobackward.10" catalog="system" id="XgL-3k-C5N"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="Mr6-Tp-Q6R" id="22Q-XZ-SNF"/>
+                        <outlet property="debugStateLabel" destination="Dz3-uh-70y" id="FfT-5I-kA3"/>
+                        <outlet property="resetButton" destination="FSG-i4-fLv" id="5Jz-Ky-gQf"/>
+                        <outlet property="toggleButton" destination="dUC-ou-imC" id="z0G-D2-V8B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="su6-FB-W0N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="1037"/>
+            <point key="canvasLocation" x="285.50724637681162" y="1036.6071428571429"/>
         </scene>
         <!--ReactiveSwift-->
         <scene sceneID="aQ6-Fa-uTx">
@@ -144,7 +197,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ET-zY-Gi8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ReactiveSwift" id="pnj-GW-7A7"/>
+                    <tabBarItem key="tabBarItem" title="ReactiveSwift" image="gobackward.10" catalog="system" id="pnj-GW-7A7"/>
                     <connections>
                         <outlet property="counterLabel" destination="qiR-wg-bx5" id="kDX-nx-9px"/>
                         <outlet property="debugStateLabel" destination="vNa-V3-6jS" id="c0r-KE-wgA"/>
@@ -176,4 +229,7 @@
             <point key="canvasLocation" x="-878" y="535"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gobackward.10" catalog="system" width="60" height="64"/>
+    </resources>
 </document>
