@@ -21,12 +21,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-xk-0Mh">
-                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-xk-0Mh">
+                                <rect key="frame" x="32" y="687" width="350" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tf-08-l9X">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="lmv-id-29o"/>
@@ -34,14 +35,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-zK-Pkc">
-                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <rect key="frame" x="203" y="0.0" width="147" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="toggleButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="FeD-Ha-9ot"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="9bL-9j-YgB"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-UC-3SR">
                                 <rect key="frame" x="20" y="44" width="374" height="16"/>
@@ -88,12 +93,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="dw6-45-que">
-                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dw6-45-que">
+                                <rect key="frame" x="32" y="687" width="350" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-i4-fLv">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetButton:" destination="0aK-cK-5iq" eventType="touchUpInside" id="4tO-bh-Pdi"/>
@@ -102,8 +108,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-ou-imC">
-                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <rect key="frame" x="203" y="0.0" width="147" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="toggleButton:" destination="u4P-an-2Iq" eventType="touchUpInside" id="fVD-rH-RRn"/>
@@ -111,6 +118,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="ab3-7R-22G"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dz3-uh-70y">
                                 <rect key="frame" x="20" y="44" width="374" height="16"/>
@@ -157,26 +167,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="GH3-Fd-Lft">
-                                <rect key="frame" x="118" y="695" width="178" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GH3-Fd-Lft">
+                                <rect key="frame" x="32" y="687" width="350" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OM-ek-veh">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="resetButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="8Zy-E0-3dg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txM-j1-QRg">
-                                        <rect key="frame" x="125" y="0.0" width="53" height="42"/>
+                                        <rect key="frame" x="203" y="0.0" width="147" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="10" maxX="40" maxY="10"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="toggleButton:" destination="csl-B8-UZw" eventType="touchUpInside" id="sLc-12-HLR"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="lWs-pt-GN5"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="debug state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-V3-6jS">
                                 <rect key="frame" x="20" y="44" width="374" height="16"/>
