@@ -44,7 +44,7 @@ class RxSwiftViewController: UIViewController {
         // that we can use to interpret the State and emit Event
          self.uiSpin = RxUISpin(spin: countdownSpin)
          self.uiSpin.render(on: self, using: { $0.render(state:) })
-         self.uiSpin.spin()
+         self.uiSpin.start()
     }
 
     @IBAction func toggleButton(_ sender: UIButton) {
