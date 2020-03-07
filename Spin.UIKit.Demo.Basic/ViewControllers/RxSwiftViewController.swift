@@ -34,10 +34,10 @@ class RxSwiftViewController: UIViewController {
         // the decrease and increase cycles
         // the reducer function is common to ReactiveSwift/RxSwift/Combine implementation
         let countdownSpin = Spinner
-             .from(initialState: State.fixed(value: 10))
-             .add(feedback: RxFeedback(effect: decreaseEffect))
-             .add(feedback: RxFeedback(effect: increaseEffect))
-             .reduce(with: RxReducer(reducer: reducer))
+             .initialState(State.fixed(value: 10))
+             .feedback(RxFeedback(effect: decreaseEffect))
+             .feedback(RxFeedback(effect: increaseEffect))
+             .reducer(RxReducer(reducer))
 
         // the uiSpin is a UI decoration of the countdownSpin
         // it is a feedback loop the has 1 special UI feedback
