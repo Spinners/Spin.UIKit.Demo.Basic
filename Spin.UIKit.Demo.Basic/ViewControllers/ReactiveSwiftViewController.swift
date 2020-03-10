@@ -6,6 +6,7 @@
 //  Copyright © 2020 Spinners. All rights reserved.
 //
 
+import ReactiveSwift
 import Spin_ReactiveSwift
 import Spin_Swift
 import UIKit
@@ -18,6 +19,7 @@ class ReactiveSwiftViewController: UIViewController {
     @IBOutlet weak var debugStateLabel: UILabel!
 
     private var uiSpin: ReactiveUISpin<State, Event>!
+    private let disposeBag = CompositeDisposable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,7 @@ class ReactiveSwiftViewController: UIViewController {
         // that we can use to interpret the State and emit Event
         self.uiSpin = ReactiveUISpin(spin: countdownSpin)
         self.uiSpin.render(on: self, using: { $0.render(state:) })
-        self.uiSpin.start()
+        SignalProducer.start(spin: self.uiSpin).disposed(by: self.disposeBag)
     }
 
     @IBAction func toggleButton(_ sender: UIButton) {
