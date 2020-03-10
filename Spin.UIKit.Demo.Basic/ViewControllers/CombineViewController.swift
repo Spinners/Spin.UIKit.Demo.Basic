@@ -6,7 +6,6 @@
 //  Copyright © 2020 Spinners. All rights reserved.
 //
 
-import Combine
 import Spin_Swift
 import Spin_Combine
 import UIKit
@@ -19,7 +18,6 @@ class CombineViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
 
     private var uiSpin: CombineUISpin<State, Event>!
-    private var disposeBag = [AnyCancellable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,7 @@ class CombineViewController: UIViewController {
         // that we can use to interpret the State and emit Event
         self.uiSpin = CombineUISpin(spin: countdownSpin)
         self.uiSpin.render(on: self, using: { $0.render(state:) })
-        AnyPublisher.start(spin: self.uiSpin).disposed(by: &self.disposeBag)
+        self.uiSpin.start()
     }
 
     @IBAction func toggleButton(_ sender: UIButton) {

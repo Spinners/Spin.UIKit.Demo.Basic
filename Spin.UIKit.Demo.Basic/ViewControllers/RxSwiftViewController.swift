@@ -6,7 +6,6 @@
 //  Copyright © 2020 Spinners. All rights reserved.
 //
 
-import RxSwift
 import Spin_RxSwift
 import Spin_Swift
 import UIKit
@@ -19,7 +18,6 @@ class RxSwiftViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
 
     private var uiSpin: RxUISpin<State, Event>!
-    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +44,7 @@ class RxSwiftViewController: UIViewController {
         // that we can use to interpret the State and emit Event
         self.uiSpin = RxUISpin(spin: countdownSpin)
         self.uiSpin.render(on: self, using: { $0.render(state:) })
-        Observable.start(spin: self.uiSpin).disposed(by: self.disposeBag)
+        self.uiSpin.start()
     }
 
     @IBAction func toggleButton(_ sender: UIButton) {
