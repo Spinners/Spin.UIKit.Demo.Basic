@@ -35,14 +35,14 @@ class CombineViewController: UIViewController {
         // the reducer function is common to ReactiveSwift/RxSwift/Combine implementation
         let countdownSpin = Spinner
             .initialState(State.fixed(value: 10))
-            .feedback(CombineFeedback(effect: decreaseEffect))
-            .feedback(CombineFeedback(effect: increaseEffect))
-            .reducer(CombineReducer(reducer))
+            .feedback(Feedback(effect: decreaseEffect))
+            .feedback(Feedback(effect: increaseEffect))
+            .reducer(Reducer(reducer))
 
         // the uiSpin is a UI decoration of the countdownSpin
         // it is a feedback loop the has 1 special UI feedback
         // that we can use to interpret the State and emit Event
-        self.uiSpin = CombineUISpin(spin: countdownSpin)
+        self.uiSpin = UISpin(spin: countdownSpin)
         self.uiSpin.render(on: self, using: { $0.render(state:) })
         self.uiSpin.start()
     }
