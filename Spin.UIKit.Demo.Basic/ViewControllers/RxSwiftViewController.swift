@@ -6,8 +6,8 @@
 //  Copyright © 2020 Spinners. All rights reserved.
 //
 
-import Spin_RxSwift
-import Spin_Swift
+import SpinRxSwift
+import SpinCommon
 import UIKit
 
 class RxSwiftViewController: UIViewController {
