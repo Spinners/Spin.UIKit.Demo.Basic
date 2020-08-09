@@ -17,7 +17,7 @@ class ReactiveSwiftViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var debugStateLabel: UILabel!
 
-    private var uiSpin: ReactiveUISpin<State, Event>!
+    private var uiSpin: UISpin<State, Event>!
 
     override func viewDidLoad() {
         super.viewDidLoad()

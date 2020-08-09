@@ -17,7 +17,7 @@ class RxSwiftViewController: UIViewController {
     @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
 
-    private var uiSpin: RxUISpin<State, Event>!
+    private var uiSpin: UISpin<State, Event>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
